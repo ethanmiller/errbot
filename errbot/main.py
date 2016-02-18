@@ -83,7 +83,7 @@ def setup_bot(backend_name, logger, config, restore=None):
     # restore the bot from the restore script
     if restore:
         # Prepare the context for the restore script
-        if 'repos' in bot:
+        if 'repos' in bot.plugin_manager:
             log.fatal('You cannot restore onto a non empty bot.')
             sys.exit(-1)
         log.info('**** RESTORING the bot from %s' % restore)

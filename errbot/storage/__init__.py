@@ -71,7 +71,7 @@ class StoreMixin(MutableMapping):
 
     def __contains__(self, x):
         try:
-            self._store.get(x)
+            self._store.get(bytes(x))
             return True
         except KeyError:
             return False
